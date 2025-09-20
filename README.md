@@ -46,9 +46,6 @@ public class Interactor : MonoBehaviour
 ```
 
 1. インスペクターで、`IInteractable` を実装したコンポーネントを持つオブジェクト/コンポーネントをリストに登録
-
-- GameObject を直接ドラッグした場合、同一オブジェクト上で最初に見つかった該当コンポーネントが自動で割り当てられます。
-- 誤って未対応のコンポーネントを入れた場合は、同一 GameObject 上の該当コンポーネントに置換します。見つからなければ null になります。
 - リストに未実装の要素が含まれていると、インスペクター上部に警告が表示されます。
 
 ## 実行時 API 概要
@@ -65,4 +62,5 @@ public class Interactor : MonoBehaviour
 
 - `T` はインターフェイス型のみ対応します。
 - 実行時には、`null` と `T` を実装していないコンポーネントはリストから除外されます。
-
+- AddInterfaceで追加できますが、基本的にはReadOnlyListとして利用することを想定しています。細かく要素を追加・削除したい場合は、別途`var list = new List<IInterface>(interfaceList)`などの方法でリストに変換してから操作してください。
+  
