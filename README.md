@@ -2,11 +2,16 @@
 
 インスペクターから特定のインターフェイスを実装したコンポーネントを登録できるシリアライズ対応のリスト型です。
 
-## できること
+## 追加方法
 
-- インスペクターで `GameObject` や `Component` をドラッグ&ドロップして登録
-- 対象インターフェイスを実装していない要素は警告表示され、実行時には除外
-- 実行時は `IReadOnlyList<T>` として列挙可能。未実装や null は内部リストから除外
+1. Unity の Package Manager を開く
+1. 右上の [+] メニューから「Install package from git URL...」を選択
+1. 次の URL を貼り付けてインストール
+
+```text
+https://github.com/orisaki888/InterfaceList.git
+```
+
 
 ## 使い方
 
@@ -61,12 +66,3 @@ public class Interactor : MonoBehaviour
 - `T` はインターフェイス型のみ対応します。
 - 実行時には、`null` と `T` を実装していないコンポーネントはリストから除外されます。
 
-## 追加方法
-
-1. Unity の Package Manager を開く
-1. 右上の [+] メニューから「Install package from git URL...」を選択
-1. 次の URL を貼り付けてインストール
-
-```text
-https://github.com/orisaki888/InterfaceList.git
-```
